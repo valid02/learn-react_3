@@ -1,23 +1,33 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React from 'react';
 
+import MoviesList from './components/MoviesList';
 import './App.css';
-import DemoList from './components/Demo/DemoList';
-import Button from './components/UI/Button/Button';
 
-function App() {
-  const [listTitle, setListTitle] = useState('My List');
-
-  const changeTitleHandler = useCallback(() => {
-    setListTitle('New Title');
-  }, []);
-
-  const listItems = useMemo(() => [5, 3, 1, 10, 9], []);
+const App = () => {
+  const dummyMovies = [
+    {
+      id: 1,
+      title: 'Some Dummy Movie',
+      openingText: 'This is the opening text of the movie',
+      releaseDate: '2021-05-18',
+    },
+    {
+      id: 2,
+      title: 'Some Dummy Movie 2',
+      openingText: 'This is the second opening text of the movie',
+      releaseDate: '2021-05-19',
+    },
+  ];
 
   return (
-    <div className="app">
-      <DemoList title={listTitle} items={listItems} />
-      <Button onClick={changeTitleHandler}>Change List Title</Button>
-    </div>
+    <React.Fragment>
+      <section>
+        <button>Fetch Movies</button>
+      </section>
+      <section>
+        <MoviesList movies={dummyMovies} />
+      </section>
+    </React.Fragment>
   );
 }
 

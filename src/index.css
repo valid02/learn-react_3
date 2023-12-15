@@ -4,13 +4,9 @@
 
 html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fff;
 }
 
 body {
   margin: 0;
-}
-
-main {
-  margin-top: 6rem;
+  background-color: #272727;
 }
